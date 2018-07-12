@@ -1,8 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -68,16 +68,19 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 		err    error
 		sites  []string
 		output []string
+		outmap = make(map[string]interface{})
+		jsonMe *json.Encoder
 		resp   *http.Response
 	)
 
 	// Set up to write to 'out'
-	toOut := bufio.NewWriter(out)
+	jsonMe = json.NewEncoder(out)
 
 	// Get the list of web sites to check
 	sites, err = geturls()
 	if err != nil {
-		toOut.WriteString(fmt.Sprintf("ERROR: %v", err))
+		outmap["error"] = fmt.Sprintf("ERROR: %v", err)
+		jsonMe.Encode(outmap)
 		return
 	}
 
@@ -96,5 +99,6 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 	}
 
 	// Write results
-	toOut.WriteString(fmt.Sprintf("FUNCTION OUTPUT:\n\n%v", strings.Join(output, "\n")))
+	outmap["results"] = fmt.Sprintf("FUNCTION OUTPUT:\n\n%v", strings.Join(output, "\n"))
+	jsonMe.Encode(outmap)
 }
