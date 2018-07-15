@@ -1,6 +1,6 @@
-version: 0.0.1
+version: 0.0.7
 runtime: go
 entrypoint: ./func
 config:
-  FUNC_SITE_0: "http://google.com"
-  FUNC_SITE_1: "http://golang.org"
+  FUNC_SITE_0: http://google.com
+  FUNC_SITE_1: http://golang.org

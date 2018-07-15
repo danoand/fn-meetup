@@ -99,6 +99,6 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 	}
 
 	// Write results
-	outmap["results"] = fmt.Sprintf("FUNCTION OUTPUT:\n\n%v", strings.Join(output, "\n"))
+	outmap["results"] = output
 	jsonMe.Encode(outmap)
 }
