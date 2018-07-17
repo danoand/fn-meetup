@@ -9,6 +9,9 @@
 
 ## Commands
 
+### Install Fn Project
+`curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh`
+
 ### Start the Fn Project server
 `fn start` 
 
