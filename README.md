@@ -2,7 +2,7 @@
 
 ## Resources
 
-* Slides: [link](https://docs.google.com/presentation/d/1HzdTt1xyr0fNRIZrhAE0ebLxEzXn9VmAhTbv8qreC6I/edit?usp=sharing)
+* Slides: [Google Slides link](https://docs.google.com/presentation/d/1HzdTt1xyr0fNRIZrhAE0ebLxEzXn9VmAhTbv8qreC6I/edit?usp=sharing)
 * Project Site: https://fnproject.io
 * Github: https://github.com/fnproject
 * Go Tutorial: https://fnproject.io/tutorials/introduction
